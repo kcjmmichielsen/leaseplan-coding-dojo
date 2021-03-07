@@ -1,0 +1,38 @@
+openapi: "3.0.2"
+info:
+  title: Weather API
+  version: "1.0"
+paths:
+  /api/weather:
+    get:
+      tags:
+        - Weather
+      operationId: getWeatherForCity
+      parameters:
+        - in: query
+          name: city
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The weather for the specific city
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Weather'
+
+components:
+  schemas:
+    Weather:
+      type: object
+      properties:
+        id:
+          type: integer
+        city:
+          type: string
+        country:
+          type: string
+        temperature:
+          type: number
+          description: Temperature in Kelvin.

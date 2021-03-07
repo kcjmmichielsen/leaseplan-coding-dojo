@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: leaseplan-weather-service
+  mustache:
+    check-template-location: false
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+open-weather-map:
+  api-key: 0af1fe86dcd821ad1ae879bb60e44fe7
+  url: http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={appid}
